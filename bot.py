@@ -96,7 +96,7 @@ def getReplLogsCommand(update: Update, context):
     res = ''
     for line in data.splitlines():
         if 'repl' in line:
-            res += line
+            res += line + '\n'
     for x in range(0, len(res), 4096):
         update.message.reply_text(res[x:x+4096])
     logging.debug('Сбор логов о репликации закончился')
